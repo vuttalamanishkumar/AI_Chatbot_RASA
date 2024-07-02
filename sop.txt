@@ -1,0 +1,22 @@
+check python version /use 3.8 
+python -m venv ./venv  //for creating venv
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser // Give permission to run local scripts
+./venv/Scripts/activate  //activating venv
+pip install -U --user pip //upgrading pip
+pip install rasa
+pip install rasa[transformers]
+-------------------------------------
+rasa init
+
+rasa train
+----------------------------------
+//--these 3 steps after opening 
+venv\Scripts\activate
+rasa train
+rasa run --cors "*" --endpoints endpoints.yml --enable-api
+
+//now run index.html
+
+deactivate
+----------------------------------
+nlu,rules,stories,config and domain 

@@ -1,0 +1,10 @@
+[
+  {
+    "text": "My computer is showing a Network path not found error, what should I do?",
+    "intent": "troubleshoot_network_path",
+    "intent_prediction": {
+      "name": "troubleshoot_default_gateway",
+      "confidence": 0.2326733022928238
+    }
+  }
+]

@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <title>AI Helpdesk</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Import Font Awesome Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+      crossorigin="anonymous"
+    />
+
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="static/css/materialize.min.css"
+    />
+
+    <!--Main css-->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+      }
+      
+      li {
+          padding: 7px;
+          background-color: #f0f0f0;
+          margin-bottom: 3px;
+      }
+  </style>
+  </head>
+
+  <body>
+    <div>
+      <h4>Questions that you can ask to the Helpdesk system</h4>
+      <hr>
+      <h5>IT service management and Network related FAQs</h5>
+      <ol>
+        <li>How do I reset my password?</li>
+        <li>How can I troubleshoot network connectivity issues?</li>
+        <li>How do I access my email remotely?</li>
+        <li>How do I install software updates on my computer?</li>
+        <li>How do I map a network drive</li>
+        <li>What is a backup and restore process?</li>
+        <li>How do I report a security incident?</li>
+        <li>How can I optimize the performance of my computer?</li>
+        <li>What is the difference between a hotfix and a service pack?</li>
+        <li>How do I set up a wireless printer?</li>
+        <li>How do I connect to a remote desktop?</li>
+        <li>How can I request a new user account?</li>
+        <li>How do I set up a virtual private network (VPN) connection?</li>
+        <li>How do I clear browser cache and cookies?</li>
+        <li>What is a firewall and how does it work?</li>
+        <li>How do I create a strong password?</li>
+        <li>What is two-factor authentication (2FA)?</li>
+        <li>How do I check if my computer has the latest antivirus updates?</li>
+        <li>How can I optimize my Wi-Fi signal strength?</li>
+        <li>How do I resolve the DNS server not responding error?</li>
+        <li>How do I troubleshoot an IP address conflict error?</li>
+        <li>How do I fix a Default gateway not available error?</li>
+        <li>What does Error 404 - Page Not Found mean?</li>
+        <li>How do I troubleshoot a DNS probe finished no internet error?</li>
+        <li>How can I troubleshoot a Network cable is not properly plugged in or may be broken error?</li>
+        <li>How do I resolve a Network path not found error?</li>
+        <li>How do I secure my Wi-Fi network from unauthorized access?</li>
+        <li>How can I check if my network adapter drivers are up to date?</li>
+        <li>I forgot my Wi-Fi password. What should I do?</li>
+        <li>How do I create a guest network for visitors?</li>
+        <li>How can I enable port forwarding to access a specific device?</li>
+      </ol>
+      <h5>Advance features</h5>
+      <ol>
+        <li>Assigning a work to a employee by entering employee id and task description.</li>
+        <li>Reporting a problem by entering device id and problem description.</li>
+      </ol>
+    </div>
+
+    <div class="container">
+      <!-- Modal for rendering the charts, declare this if you want to render charts, 
+         else you remove the modal -->
+      <div id="modal1" class="modal">
+        <canvas id="modal-chart"></canvas>
+      </div>
+
+      <!--chatbot widget -->
+      <div class="widget">
+        <div class="chat_header">
+          <!--Add the name of the bot here -->
+          <span class="chat_header_title">HelpDesk</span>
+          <span class="dropdown-trigger" href="#" data-target="dropdown1">
+            <img class="botAvatar" src="./static/img/more_vert.png" alt="More options">
+          </span>
+
+          <!-- Dropdown menu-->
+          <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#" id="clear">Clear</a></li>
+            <li><a href="#" id="restart">Restart</a></li>
+            <li><a href="#" id="close">Close</a></li>
+          </ul>
+        </div>
+
+        <!--Chatbot contents goes here -->
+        <div class="chats" id="chats">
+          <div class="clearfix"></div>
+          <img class="botAvatar" src="./static/img/sara_avatar.png">
+          <p class="botMsg">Hello, how can I help you?</p>
+          <div class="clearfix"></div>
+        </div>
+
+        <!--keypad for user to type the message -->
+        <div class="keypad">
+          <textarea
+            id="userInput"
+            placeholder="Type a message..."
+            class="usrInput"
+          ></textarea>
+          <div id="sendButton">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <!--bot profile-->
+      <div class="profile_div" id="profile_div">
+        <img class="imgProfile" src="static/img/botAvatar.png" />
+      </div>
+
+      <!-- Bot pop-up intro -->
+      <div class="tap-target" data-target="profile_div">
+        <div class="tap-target-content">
+          <h5 class="white-text">Hey there</h5>
+          <p class="white-text">
+            I can help you and answer your questions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="static/js/lib/jquery.min.js"></script> 
+
+    <script
+      type="text/javascript"
+      src="static/js/lib/materialize.min.js"
+    ></script>
+    <script src="static/js/lib/uuid.min.js"></script>
+    <!--Main Script -->
+    <script type="text/javascript" src="static/js/script.js"></script>
+
+    <!--Chart.js Script -->
+    <script type="text/javascript" src="static/js/lib/chart.min.js"></script>
+    <script type="text/javascript" src="static/js/lib/showdown.min.js"></script>
+  </body>
+</html>
